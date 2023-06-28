@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 
 export interface FetchDataResponse<T> {
   count: number
-  next: string | null
+  next?: string | null
   results: T[]
 }
 
