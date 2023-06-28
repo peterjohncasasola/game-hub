@@ -16,8 +16,8 @@ export interface Game {
 
 const useGames = (gameQuery : GameQuery) => 
 useInfiniteQuery<FetchDataResponse<Game>, Error>({
-  queryKey: ['games', gameQuery],
-  // keepPreviousData: true,
+  queryKey: ['games', gameQuery], 
+  staleTime: 24 * 60 * 60 * 1000, //24h
   getNextPageParam: (lastPage, allPages) => {
     return lastPage.next ? allPages.length + 1 : undefined 
   },
