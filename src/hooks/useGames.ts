@@ -24,10 +24,10 @@ useInfiniteQuery<FetchDataResponse<Game>, Error>({
   queryFn: ({pageParam = 1}) => apiClient.getAll({
     params: {
       page: pageParam,
-      genres: gameQuery.genre?.id,
+      genres: gameQuery.genreId,
       ordering: gameQuery.sortOrder,
       search: gameQuery.searchText,
-      parent_platforms: gameQuery.platform?.id
+      parent_platforms: gameQuery.platformId
     }
   })
 })
